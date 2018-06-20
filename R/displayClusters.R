@@ -1,4 +1,4 @@
-displayClusters <- function(W, group) {
+displayClusters <- function(W, group, xlabel = 'samples', ylabel = 'samples', main.title) {
     # Visualizes the specified clusters in an affinity matrix 
     #
     # Args:
@@ -17,6 +17,9 @@ displayClusters <- function(W, group) {
     diag(W) <- 0
     W <- normalize(W)
     W <- W + t(W)
-
-    image(1:ncol(W),1:nrow(W),W[ind,ind],col = grey(100:0 / 100),xlab = 'Patients',ylab='Patients');
+    
+    W <- W *1000
+    
+    image(1:ncol(W),1:nrow(W),W[ind,ind] ,xlab = xlabel,ylab=ylabel)
+    title(main.title)
 }
