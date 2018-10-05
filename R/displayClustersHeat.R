@@ -23,6 +23,6 @@ displayClustersHeat <- function(W, group, xlabel = 'samples', ylabel = 'samples'
   
   #image(1:ncol(W),1:nrow(W),W[ind,ind],col = grey(100:0 / 100),xlab = xlabel ,ylab=ylabel);
   
-  heatmap(W[ind, ind], Rowv = NA, Colv = NA, xlab = xlabel, ylab = ylabel , main = main.title)
+  heatmap(W[ind, ind], Rowv = NULL, Colv = NULL, xlab = xlabel, ylab = ylabel , main = main.title, useRaster = TRUE)
   
 }
